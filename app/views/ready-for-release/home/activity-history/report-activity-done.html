@@ -1,0 +1,48 @@
+{% extends "/layouts/home-header.html" %}
+
+{% block pageTitle %}
+You’ve reported activity you do not recognise – GOV.UK One Login
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../_includes/phase-banner.html" %}
+<a class="govuk-back-link" href="activity-history">Back to activity history</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        You’ve reported activity you do not recognise
+      </h1>
+    </div>    
+    <p>Thanks for reporting this activity. A confirmation email with your report number will be sent to <strong>
+      {% if data['new-email'] %}
+          {{ data['new-email'] or "name@email.com"}}
+      {% else %}
+          {{ data['email-address'] or "name@email.com"}}
+      {% endif %}
+    </strong>.</p>
+    <h2 class="govuk-heading-m">Change your password</h2>
+    <p class="govuk-body">
+      <a href="../security/enter-password-password" class="govuk-link govuk-link--no-visited-state">Change your password</a> if you have not done this already.
+    </p>
+    <p>Changing your password is the best way to keep your GOV.UK One Login secure.</p>
+    <p>We recommend that you:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        create a secure and memorable password, for example by using 3 random words
+      </li>
+      <li>
+        use a different password to the one you use to sign in to your email
+      </li>
+    </ul>
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p>The GOV.UK One Login team will investigate your report.</p>
+    <p>We’ll only email you again if you need to do something to help protect your GOV.UK One Login.</p>
+    <p>We’ll always include your report number when we email you.</p>
+  </div>
+</div>
+
+{% endblock %}

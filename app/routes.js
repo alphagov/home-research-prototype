@@ -6,4 +6,6 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-// Add your routes here
+// READY FOR RELEASE ROUTES
+// pull in auth routes
+router.use('/', require('./views/ready-for-release/routes/routes-auth.js'))

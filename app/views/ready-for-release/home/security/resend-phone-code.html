@@ -1,0 +1,34 @@
+{% extends "/layouts/home-header.html" %}
+
+{% block pageTitle %}
+Get security code – GOV.UK One Login
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../_includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Get security code
+    </h1>
+     {% if data['phone-number'] %}
+      <div class="govuk-inset-text">
+        We will send a code to your phone number ending with <span class="govuk-!-font-weight-bold">{{ data['new-phone-number'].substring(data['new-phone-number'].length - 3)}}</span>
+      </div>
+      {% else %}
+      <div class="govuk-inset-text">
+        We will send a code to your phone number ending with <span class="govuk-!-font-weight-bold">406</span>
+      </div>
+      {% endif %}
+    <p>Text messages can sometimes take a few minutes to arrive.</p>
+    <form class="form" action="check-your-phone" method="post">
+      <button class="govuk-button" data-module="govuk-button">Get security code</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

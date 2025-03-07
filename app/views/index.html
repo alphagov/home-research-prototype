@@ -4,17 +4,70 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
-
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+<div class="app-masthead govuk-!-padding-bottom-6 govuk-!-margin-bottom-6">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="app-masthead__title govuk-heading-xl govuk-!-margin-bottom-3">
+          {{ serviceName }}
+        </h1>
+        <h2 class="app-masthead__subtitle govuk-heading-l govuk-!-font-weight-regular">Prototype</h2>
+        <div class="app-masthead__description">
+          <p class="govuk-body">This site contains prototyping for the <strong>Home</strong> part of the GOV.UK One Login service</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+<body>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">Versions</h2>
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Ready for release
+          </h2>
+          <a href="ready-for-release/authentication/gov-account" class="govuk-link--no-visited-state">Ready for release version</a>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Summary
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p>Designs have been tested, iterated on, discussed and are ready to be developed. They are not in the live product so may not be appropriate to show users/stakeholders unless with a caveat.</p>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+               Last updated
+              </dt>
+              <dd class="govuk-summary-list__value">
+                6 March 2025
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">Related content</h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list useful-links govuk-!-font-size-16">
+            <li>
+              <a href="https://github.com/govuk-one-login/di-one-login-home" class="govuk-link--no-visited-state">
+                Prototype GitHub repository
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+  </div>
+</body>
 
 {% endblock %}

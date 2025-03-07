@@ -4,3 +4,110 @@
 // 
 
 // Add extra styles here
+
+// Masthead styling
+.app-masthead {
+	background-color: #1d70b8;
+	margin-top: -50px;
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+
+@media (min-width: 40.0625em) {
+	.app-masthead {
+		padding-top: 40px;
+	}
+}
+
+@media (max-width: 640px) {
+	.app-masthead {
+		margin-top: -30px;
+		padding-top: 30px;
+	}
+}
+
+.app-masthead__title,
+.app-masthead__subtitle,
+.app-masthead p {
+	color: #ffffff;
+}
+
+// New header (2025)
+.govuk-header--with-sign-out-link {
+	.govuk-header__content {
+		text-align: right;
+	}
+
+	@include govuk-media-query ($until: tablet) {
+		.govuk-header__navigation-list {
+			display: block !important;
+		}
+
+		.govuk-header__menu-button {
+			display: none !important;
+		}
+
+		.govuk-header__logo {
+			float: left;
+			padding-right: 0;
+		}
+
+		.govuk-header__content {
+			float: right;
+		}
+	}
+}
+
+// Activity card
+.activity-card {
+	border: solid 1px #b1b4b6;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+// Information box
+.information-box {
+	margin-bottom: govuk-spacing(4);
+	padding: govuk-spacing(3);
+	background: govuk-colour("light-grey");
+
+	@include govuk-media-query($from: tablet) {
+		padding: govuk-spacing(6);
+		margin-top: govuk-spacing(2);
+		margin-bottom: govuk-spacing(8);
+	}
+}
+
+// Original service cards with titles
+.service-card--with-title {
+	border: 1px solid #b1b4b6;
+	margin-bottom: 20px;
+}
+
+.service-card-title {
+	padding: 20px;
+	padding-bottom: 5px;
+	background-color: #f3f2f1;
+}
+
+.service-card-body {
+	padding: 20px;
+}
+
+.service-card-date {
+	color: #505A5F;
+	margin-bottom: 0px;
+}
+
+// Simplified service cards
+.service-card--other-task {
+	border: 1px solid #b1b4b6;
+	padding: 15px;
+	margin-bottom: 20px;
+}

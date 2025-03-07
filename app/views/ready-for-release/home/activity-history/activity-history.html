@@ -1,0 +1,69 @@
+{% extends "/layouts/home-header.html" %}
+
+{% block pageTitle %}
+Activity history – GOV.UK One Login
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../_includes/phase-banner.html" %}
+<a class="govuk-back-link" href="../security/security">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Activity history</h1>
+    <p>See what you’ve visited with your GOV.UK One Login.</p>
+    <p>If you see something you do not recognise, report it and <a href="../security/enter-password-password" class="govuk-link">change your password</a>.</p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <div>
+      <h2 class="govuk-heading-s">{{ "now" | duration(-1, "days") | govukDate }} at 2:10pm (UK time)</h2>
+      <p>You visited Sign your mortgage deed</p>
+      <p class="govuk-body">
+        <a href="report-activity" class="govuk-link govuk-link--no-visited-state">Report the activity from {{ "now" | duration(-5, "weeks") | govukDate }} at 2:10pm</a>
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+
+    <div>
+      <h2 class="govuk-heading-s">{{ "now" | duration(-7, "weeks") | govukDate }} at 1:00pm (UK time)</h2>
+      <p>You visited Request a basic DBS check</p>
+      <p class="govuk-body">
+        <a href="already-reported" class="govuk-link govuk-link--no-visited-state">Report the activity from {{ "now" | duration(-10, "weeks") | govukDate }} at 1:00pm</a>
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+    
+    <div>
+      <h2 class="govuk-heading-s">{{ "now" | duration(-15, "weeks") | govukDate }} at 5:34pm (UK time)</h2>
+      <p>You visited Check your State Pension forecast</p>
+      <p class="govuk-body">
+        <a href="" class="govuk-link govuk-link--no-visited-state">Report the activity from {{ "now" | duration(-20, "weeks") | govukDate }} at 5:34pm </a>
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+
+    <div>
+      <h2 class="govuk-heading-s">{{ "now" | duration(-21, "weeks") | govukDate }} at 6:05pm (UK time)</h2>
+      <p>You: </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>created your GOV.UK One Login </li>
+        <li>proved your identity with your GOV.UK One Login </li>
+        <li>visited Request a basic DBS check</li>
+      </ul>
+        <p class="govuk-body">
+        <a href="" class="govuk-link govuk-link--no-visited-state">Report the activity from {{ "now" | duration(-21, "weeks") | govukDate }} at 6:05pm </a>
+      </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+
+    <div>
+      <p>GOV.UK One Login started recording activity history on {{ "now" | duration(-21, "weeks") | govukDate }}.  </p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+
+  </div>
+</div>
+{% endblock %}

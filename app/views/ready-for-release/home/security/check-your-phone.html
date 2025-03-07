@@ -1,0 +1,65 @@
+{% extends "/layouts/home-header.html" %}
+
+{% block pageTitle %}
+Check your phone – GOV.UK One Login
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../_includes/phase-banner.html" %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="phone-updated-success" method="post">
+    <h1 class="govuk-heading-l">Check your phone</h1>
+    {% if data['new-phone-number'] %}
+      <div class="govuk-inset-text">
+        We have sent a code to your phone number ending with <span class="govuk-!-font-weight-bold">{{ data['new-phone-number'].substring(data['new-phone-number'].length - 3)}}</span>
+      </div>
+      {% else %}
+      <div class="govuk-inset-text">
+        We have sent a code to your phone number ending with <span class="govuk-!-font-weight-bold">406</span>
+      </div>
+      {% endif %}
+    
+    <p class="govuk-body">It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="otp">Enter the 6 digit security code</label>
+      <input class="govuk-input govuk-input--width-5" id="otp" name="create-sms-otp" type="text" autocomplete="one-time-code" inputmode="numeric" spellcheck="false" >
+    </div>
+    <button class="govuk-button" data-module="govuk-button">Continue</button>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Problems receiving the code?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        We can <a href="resend-phone-code">send the code again</a> or you can <a href="enter-new-number">use a different phone number</a>.
+      </div>
+    </details>
+  </main>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <div class="govuk-!-padding-bottom-3"></div>
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Journey options</h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <p class="govuk-body">You can:</p>
+            <p class="govuk-body">
+              <a href="otp-sms" class="govuk-link" rel="noreferrer noopener" target="_blank">view security code text message (opens in new tab)</a>
+            </p>
+          </div>
+        </div>
+        <div class="govuk-!-padding-bottom-6"></div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "/layouts/home-header.html" %}
+
+{% block pageTitle %}
+You’ve already reported this activity – GOV.UK One Login
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../../_includes/phase-banner.html" %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">You’ve already reported this activity</h1>
+    <p>You reported this on {{ "now" | duration(-1, "weeks") | govukDate }}.</p>
+    <p>The report number is <strong>6814</strong>.</p>
+  </div>
+</div>
+{% endblock %}
