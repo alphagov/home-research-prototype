@@ -37,9 +37,15 @@ Check your phone
     {% else %}
     <form class="form" action="../home/account-home" method="POST">
       <h1 class="govuk-heading-l">Check your phone</h1>
-      <div class="govuk-inset-text">
-        <p>We have sent a code to your phone number ending with  <strong>{{ data['obfNumber'] or '789' }}</strong></p>
-      </div>
+      {% if data['phone-number'] %}
+        <div class="govuk-inset-text">
+          We have sent a code to your phone number ending with <span class="govuk-!-font-weight-bold">{{ data['phone-number'].substring(data['phone-number'].length - 3)}}</span>
+        </div>
+        {% else %}
+        <div class="govuk-inset-text">
+          We have sent a code to your phone number ending with <span class="govuk-!-font-weight-bold">406</span>
+        </div>
+      {% endif %}
       <p class="govuk-body">It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
       <div class="govuk-form-group">
         <label class="govuk-label" for="otp">Enter the 6 digit security code</label>
@@ -54,16 +60,9 @@ Check your phone
         </summary>
         <div class="govuk-details__text">
           <p class="govuk-body">
-            <p class="govuk-body">
-              <a href="">Send the code again.</a> if it’s not working or you did not receive it.
-              </p>
-            <p class="govuk-body">
-            If you no longer have access to this phone number you may be able to <a href="recovery-id-steps">change how you get security codes.</a>
-            </p>
-            <form action="signin-email-recovery" method="post">
-              <a href="javascript:;" onclick="parentNode.submit();"></a>
-              <input type="hidden" name="mess" value=<%=n%>
-            </form>  
+            <a href="#">Send the code again</a> if it’s not working or you did not receive it.
+          </p>
+          <p class="govuk-body">If you no longer have access to this phone number you may be able to <a href="#">change how you get security codes.</a>
           </p>
         </div>
       </details>
