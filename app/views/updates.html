@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Updates history
+{% endblock %}
+
+{% block content %}
+<a class="govuk-back-link" href="/">Back</a>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Updates history</h1>
+    <div class="moj-timeline">
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">First 'Ready for release' version created</h2>
+          <p class="moj-timeline__byline">by Leigh Christie</p>
+        </div>
+        <p class="moj-timeline__date">
+          <time datetime="2019-06-14T14:01:00.000Z">7 March 2025</time>
+        </p>
+        <div class="moj-timeline__description">
+          <p>These 'Ready for release' designs have been tested, iterated on, discussed and are ready to be developed. They are not in the live product so may not be appropriate to show users/stakeholders unless with a caveat.</p>
+          <p>This version includes:</p>
+          <ul class="govuk-list govuk-list--bullet"> 
+            <li>changes to the primary navigation</li>
+            <li>new <a href="/ready-for-release/home/account-home" class="govuk-link--no-visited-state">Home page</a></li>
+            <li>streamlined <a href="/ready-for-release/home/your-services" class="govuk-link--no-visited-state">service cards</a></li>
+          </ul>
+          <a class="govuk-button govuk-!-margin-bottom-0" href="#">Continue</a>
+        </div>
+      </div>
+      <div class="moj-timeline__item">
+        <div class="moj-timeline__header">
+          <h2 class="moj-timeline__title">Created </h2>
+          <p class="moj-timeline__byline">by Leigh Christie</p>
+        </div>
+        <p class="moj-timeline__date">
+          <time datetime="2019-06-14T14:01:00.000Z">5 March 2025</time>
+        </p>
+        <div class="moj-timeline__description">
+          <p>Recreated the One Login Home prototype to have a robust end-to-end version for user research.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
