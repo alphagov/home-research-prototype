@@ -1,0 +1,97 @@
+{% extends "/layouts/main-home-header.html" %}
+
+{% set activeNav = "security" %}
+
+{% block pageTitle %}
+Security - GOV.UK One Login
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-top-4">
+      Security 
+    </h1>
+    <!--Sign in-->
+    <div class="activity-card govuk-!-margin-bottom-6">
+      <h2 class="govuk-heading-m">Your sign in details</h2>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6; padding-top:10px">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+          {% if data['new-email'] %}
+          <dd class="govuk-summary-list__value">
+            <p>
+              {{ data['new-email'] or "name@email.com"}}
+            </p> 
+          </dd>
+          {% else %}
+          <dd class="govuk-summary-list__value">
+            <p>
+              {{ data['email-address'] or "name@email.com"}}
+            </p> 
+          </dd>
+          {% endif %}
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="enter-password-email">
+              Change email address
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Password
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ••••••••••••••••
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="enter-password-password">
+              Change password
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <!--Security codes-->
+    <div class="activity-card govuk-!-margin-bottom-6">
+      <h2 class="govuk-heading-m">How you get security codes</h2>
+      <p>We use security codes to make sure it’s you when you sign in.</p>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+        <div class="govuk-summary-list__row" style="border-top: 1px solid #b1b4b6; padding-top:10px">
+          <dt class="govuk-summary-list__key">
+            Text message
+          </dt>
+          {% if data['new-phone-number'] %}
+          <dd class="govuk-summary-list__value">
+            Phone number ending with {{ data['new-phone-number'].substring(data['new-phone-number'].length - 3)}}
+          </dd>
+          {% elseif data['phone-number'] %}
+          <dd class="govuk-summary-list__value">
+            Phone number ending with {{ data['phone-number'].substring(data['phone-number'].length - 3)}}
+          </dd>
+          {% else %}
+          <dd class="govuk-summary-list__value">
+            Phone number ending with 406
+          </dd>
+          {% endif %}
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="enter-password-number">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <!--Delete-->
+    <div class="activity-card govuk-!-margin-bottom-6">
+      <h2 class="govuk-heading-m">Delete your GOV.UK One Login</h2>
+      <p class="govuk-body">This will permanently delete your GOV.UK One Login. You’ll no longer be able to sign in to the services you’ve used with it.</p>
+      <p class="govuk-body govuk-!-margin-bottom-0"><a href="enter-password-delete" class="govuk-link--no-visited-state">Delete your GOV.UK One Login</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
