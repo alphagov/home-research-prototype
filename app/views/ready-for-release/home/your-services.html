@@ -25,44 +25,16 @@ Your services – GOV.UK One Login
     <p>From here, you can go directly to a service to use it again.</p>
 
     <div class="service-card--other-task">
-      <p><a href="#" class="govuk-link--no-visited-state">Teaching vacancies account</a></p>
-      <p class="service-card-date">Last used: 18 October 2024</p>
-    </div>
-    <div class="service-card--other-task">
-      <p><a href="https://www.gov.uk/renew-adult-passport" class="govuk-link--no-visited-state">Renew or replace your adult passport</a></p>
-      <p class="service-card-date">Last used: 26 September 2024</p>
-    </div>
-    <div class="service-card--other-task">
-      <p><a href="https://www.gov.uk/register-to-vote" class="govuk-link--no-visited-state">Register to vote</a></p>
-      <p class="service-card-date">Last used: 1 May 2024</p>
-    </div>
-    <div class="service-card--other-task">
-      <p><a href="#" class="govuk-link--no-visited-state">Personal tax account</a></p>
-      <p class="service-card-date">Last used: 6 April 2024</p>
-    </div>
-    <div class="service-card--other-task">
-      <p><a href="https://www.gov.uk/government/collections/additional-payments-for-teaching-eligibility-and-payment-details" class="govuk-link--no-visited-state">Claim additional payments for teaching</a></p>
-      <p class="service-card-date">Last used: 2 September 2023</p>
+      <p><a href="#" class="govuk-link--no-visited-state">Sign your mortgage deed</a></p>
+      <p class="service-card-date">Last used: {{ "now" | duration(-1, "days") | govukDate }}</p>
     </div>
     <div class="service-card--other-task">
       <p><a href="https://www.gov.uk/request-copy-criminal-record" class="govuk-link--no-visited-state">Request a basic DBS check</a></p>
-      <p class="service-card-date">Last used: 26 August 2023</p>
-    </div>
-    <div class="service-card--other-task">
-      <p><a href="https://find-a-lost-trn.education.gov.uk/start" class="govuk-link--no-visited-state">Find a lost teacher reference number (TRN)</a></p>
-      <p class="service-card-date">Last used: 1 June 2023</p>
+      <p class="service-card-date">Last used: {{ "now" | duration(-7, "weeks") | govukDate }}</p>
     </div>
     <div class="service-card--other-task">
       <p><a href="/services/service-cards-iteration/state-pension-summary.html" class="govuk-link--no-visited-state">State Pension forecast account</a></p>
-      <p class="service-card-date">Last used: 23 April 2023</p>
-    </div>
-    <div class="service-card--other-task">
-      <p><a href="https://www.gov.uk/change-address-driving-licence" class="govuk-link--no-visited-state">Change the address on your driving licence</a></p>
-      <p class="service-card-date">Last used: 9 November 2022</p>
-    </div>
-    <div class="service-card--other-task">
-      <p><a href="https://www.gov.uk/guidance/apply-for-a-national-professional-qualification-npq" class="govuk-link--no-visited-state">Apply for a national professional qualification (NPQ)</a></p>
-      <p class="service-card-date">Last used: 30 July 2022</p>
+      <p class="service-card-date">Last used: {{ "now" | duration(-15, "weeks") | govukDate }}</p>
     </div>
     <div class="information-box">
       <h3 class="govuk-heading-m">
