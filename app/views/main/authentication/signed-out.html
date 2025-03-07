@@ -1,0 +1,29 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+You have signed out - GOV.UK One Login
+{% endblock %}
+
+{% block header %}
+{% include "../authentication/_includes/header-auth-mvp.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{% include "../../_includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      You have signed out
+    </h1>
+    <p class="govuk-body">
+      Go to the <a href="#" class="govuk-link">GOV.UK homepage</a> or <a href="gov-account" class="govuk-link">sign in</a> to your GOV.UK One Login.
+    </p>
+  </div>
+</div>
+
+{% endblock %}
+
